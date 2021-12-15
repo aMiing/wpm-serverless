@@ -27,8 +27,15 @@ db.collection('user').where({
 });
 
 db.collection('goods').add({
-	name: 'pingguo',
+	name: 'pingguo2',
 	remain_count: 120,
-	price: 10.20
+	price: 10.20,
+	category_id: '61b8a4cfc2d02200014d3a77'
+	
 })
 // orderBy('create_date')
+
+db.collection('goods').where({category_id: '61b8a4cfc2d02200014d3a77'}).skip(0)
+				.limit(100).get()
+				
+db.collection('vip').add({nickname: 'jql', mobile: '13624561234'})

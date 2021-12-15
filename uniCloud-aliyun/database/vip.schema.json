@@ -38,9 +38,7 @@
 		}
 	},
 	"required": [
-		"user_id",
-		"score",
-		"balance",
+		"nickname",
 		"mobile"
 	]
 }
