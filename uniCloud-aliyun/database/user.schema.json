@@ -1,0 +1,111 @@
+{
+	"bsonType": "object",
+	"properties": {
+		"_id": {
+			"description": "存储文档 ID（用户 ID），系统自动生成"
+		},
+		"avatar": {
+			"bsonType": "string",
+			"description": "头像地址",
+			"title": "头像地址",
+			"trim": "both"
+		},
+		"avatar_file": {
+			"bsonType": "file",
+			"description": "用file类型方便使用uni-file-picker组件",
+			"title": "头像文件"
+		},
+		"usercode": {
+			"bsonType": "string",
+			"description": "对应前端的username",
+			"title": "对应前端的username",
+			"trim": "both"
+		},
+		"name": {
+			"bsonType": "string",
+			"description": "昵称、姓名",
+			"title": "昵称、姓名",
+			"trim": "both"
+		},
+		"last_login_date": {
+			"bsonType": "timestamp",
+			"description": "最后登录时间"
+		},
+		"last_login_ip": {
+			"bsonType": "string",
+			"description": "最后登录时 IP 地址"
+		},
+		"password": {
+			"bsonType": "password",
+			"description": "密码，加密存储",
+			"title": "密码",
+			"trim": "both"
+		},
+		"permissions": {
+			"bsonType": "string",
+			"description": "权限码",
+			"title": "权限码",
+			"trim": "both"
+		},
+		"register_date": {
+			"bsonType": "timestamp",
+			"description": "注册时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		},
+		"register_ip": {
+			"bsonType": "string",
+			"description": "注册时 IP 地址",
+			"forceDefaultValue": {
+				"$env": "clientIP"
+			}
+		},
+		"role": {
+			"bsonType": "array",
+			"description": "用户角色",
+			"enum": {
+				"collection": "uni-id-roles",
+				"field": "role_id as value, role_name as text"
+			},
+			"foreignKey": "uni-id-roles.role_id",
+			"permission": {
+				"write": false
+			},
+			"title": "角色"
+		},
+		"score": {
+			"bsonType": "int",
+			"description": "用户积分，积分变更记录可参考：uni-id-scores表定义"
+		},
+		"status": {
+			"bsonType": "int",
+			"defaultValue": 0,
+			"description": "用户状态：0 正常 1 禁用 2 审核中 3 审核拒绝",
+			"enum": [{
+					"text": "正常",
+					"value": 0
+				},
+				{
+					"text": "禁用",
+					"value": 1
+				},
+				{
+					"text": "审核中",
+					"value": 2
+				},
+				{
+					"text": "审核拒绝",
+					"value": 3
+				}
+			],
+			"title": "用户状态"
+		},
+		"token": {
+			"bsonType": "array",
+			"description": "用户token"
+		}
+
+	},
+	"required": []
+}

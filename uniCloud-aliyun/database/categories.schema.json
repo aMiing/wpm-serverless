@@ -1,0 +1,63 @@
+{
+	"bsonType": "object",
+	"permission": {
+		"create": false,
+		"delete": false,
+		"read": true,
+		"update": false
+	},
+	"properties": {
+		"_id": {
+			"description": "存储文档 ID（文章 ID），系统自动生成"
+		},
+		"create_date": {
+			"bsonType": "timestamp",
+			"defaultValue": {
+				"$env": "now"
+			},
+			"description": "创建时间"
+		},
+		"description": {
+			"bsonType": "string",
+			"description": "类别描述",
+			"title": "类别描述",
+			"trim": "both"
+		},
+		"icon": {
+			"bsonType": "string",
+			"description": "类别图标/图片地址",
+			"pattern": "^(http://|https://|/|./|@/)\\S",
+			"title": "图标地址",
+			"trim": "both"
+		},
+		"is_hot_show": {
+			"bsonType": "bool",
+			"description": "是否热门显示",
+			"title": "加入热门显示"
+		},
+		"is_index_show": {
+			"bsonType": "bool",
+			"description": "是否首页显示",
+			"title": "首页显示"
+		},
+		"name": {
+			"bsonType": "string",
+			"description": "类别名称",
+			"title": "类别名称",
+			"trim": "both"
+		},
+		"parent_id": {
+			"bsonType": "string",
+			"description": "父ID，用于多级分类"
+		},
+		"sort": {
+			"bsonType": "int",
+			"description": "类别排序，越大越靠后",
+			"title": "排序",
+			"defaultValue": 0
+		}
+	},
+	"required": [
+		"name"
+	]
+}

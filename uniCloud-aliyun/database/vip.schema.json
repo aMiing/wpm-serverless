@@ -1,0 +1,46 @@
+{
+	"bsonType": "object",
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		"nickname": {
+			"bsonType": "string",
+			"description": "用户昵称",
+			"title": "昵称",
+			"trim": "both"
+		},
+		"balance": {
+			"bsonType": "int",
+			"description": "充值卡余额"
+		},
+		"integral": {
+			"bsonType": "int",
+			"description": "积分余额"
+		},
+		"mobile": {
+			"bsonType": "string",
+			"description": "手机号码",
+			"pattern": "^\\+?[0-9-]{3,20}$",
+			"title": "手机号码",
+			"trim": "both"
+		},
+		"create_date": {
+			"bsonType": "timestamp",
+			"description": "创建时间",
+			"forceDefaultValue": {
+				"$env": "now"
+			}
+		},
+		"user_status": {
+			"bsonType": "int",
+			"description": "用户状态，1:正常；2：删除"
+		}
+	},
+	"required": [
+		"user_id",
+		"score",
+		"balance",
+		"mobile"
+	]
+}

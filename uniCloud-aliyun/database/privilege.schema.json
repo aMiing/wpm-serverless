@@ -1,0 +1,29 @@
+// 文档教程: https://uniapp.dcloud.net.cn/uniCloud/schema
+{
+	"bsonType": "object",
+	"required": [],
+	"permission": {
+		"read": false,
+		"create": false,
+		"update": false,
+		"delete": false
+	},
+	"properties": {
+		"_id": {
+			"description": "ID，系统自动生成"
+		},
+		"cost_unit": {
+			"bsonType": "int",
+			"description": "消费多少积多少积分，前面的金额单位，单位：分"
+		},
+		"integrals": {
+			"bsonType": "int",
+			"description": "消费多少积多少积分，后面的积分"
+		},
+		"discount": {
+			"bsonType": "int",
+			"description": "折扣 0-100"
+		}
+
+	}
+}
